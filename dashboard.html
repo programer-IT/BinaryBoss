@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | BINARYBOSS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo">⚡ <span>BINARYBOSS</span></a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <div class="nav-menu" id="navMenu">
+          <ul class="nav-links">
+            <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            <li><a href="game.html">Play</a></li>
+            <li><a href="scoreboard.html">Scoreboard</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="settings.html">Settings</a></li>
+          </ul>
+          <div class="nav-actions">
+            <button class="btn btn-ghost" data-logout>Logout</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container page">
+      <section class="glass welcome">
+        <div class="welcome-left">
+          <div class="avatar" id="userAvatar">🤖</div>
+          <div>
+            <p>Welcome back,</p>
+            <h1 id="welcomeName">Player</h1>
+          </div>
+        </div>
+        <a href="game.html" class="btn btn-primary btn-lg">▶ Play BINARYBOSS</a>
+      </section>
+
+      <section class="stats">
+        <div class="glass stat">
+          <div class="label">Total Points</div>
+          <div class="value" id="statTotal">0</div>
+        </div>
+        <div class="glass stat">
+          <div class="label">Highest Score</div>
+          <div class="value" id="statHighest">0</div>
+        </div>
+        <div class="glass stat">
+          <div class="label">Games Played</div>
+          <div class="value" id="statGames">0</div>
+        </div>
+        <div class="glass stat">
+          <div class="label">Current Rank</div>
+          <div class="value" id="statRank">—</div>
+        </div>
+      </section>
+
+      <section class="dash-grid">
+        <div class="glass panel">
+          <div class="panel-head">
+            <h2>Recent Games</h2>
+            <a href="profile.html">View all</a>
+          </div>
+          <div class="table-wrap" id="historyWrap" hidden>
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Difficulty</th>
+                  <th>Score</th>
+                  <th>Correct</th>
+                </tr>
+              </thead>
+              <tbody id="historyBody"></tbody>
+            </table>
+          </div>
+          <div class="empty" id="historyEmpty">
+            <div class="big">🎮</div>
+            <p>No games yet. Play your first game!</p>
+          </div>
+        </div>
+
+        <div class="glass panel">
+          <div class="panel-head">
+            <h2>Top 5 Players</h2>
+            <a href="scoreboard.html">Full scoreboard</a>
+          </div>
+          <ul class="lb-list" id="leaderboardPreview" hidden></ul>
+          <div class="empty" id="leaderboardEmpty">
+            <div class="big">🏆</div>
+            <p>No scores yet. Be the first on the board!</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

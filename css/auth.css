@@ -1,0 +1,92 @@
+/* ==========================================================
+   BINARYBOSS - auth.css (login at register)
+   ========================================================== */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.auth-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 38px 34px;
+}
+.auth-card h1 {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+  text-align: center;
+}
+.auth-sub {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.form-group input {
+  width: 100%;
+  padding: 13px 15px;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  background: rgba(6, 10, 28, 0.7);
+  color: #fff;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: 0.2s;
+}
+.form-group input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(61, 123, 255, 0.25);
+}
+.hint {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+.form-error {
+  display: none;
+  padding: 11px 14px;
+  border-radius: 10px;
+  background: rgba(248, 113, 113, 0.12);
+  border: 1px solid rgba(248, 113, 113, 0.5);
+  color: #fecaca;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+.form-error.show {
+  display: block;
+}
+
+.auth-card .btn {
+  width: 100%;
+}
+.auth-switch {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.auth-switch a {
+  color: var(--cyan);
+  font-weight: 600;
+}

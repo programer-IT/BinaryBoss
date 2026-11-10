@@ -1,0 +1,360 @@
+/* ==========================================================
+   BINARYBOSS - style.css (global)
+   ========================================================== */
+:root {
+  --bg: #060a1c;
+  --card: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(120, 150, 255, 0.18);
+  --blue: #3d7bff;
+  --purple: #8b5cf6;
+  --cyan: #22d3ee;
+  --green: #34d399;
+  --red: #f87171;
+  --gold: #fbbf24;
+  --text: #e8ecff;
+  --muted: #8f9acb;
+  --glow-blue: 0 0 20px rgba(61, 123, 255, 0.55);
+  --glow-purple: 0 0 22px rgba(139, 92, 246, 0.5);
+  --radius: 18px;
+  --font-title: "Orbitron", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+[hidden] {
+  display: none !important;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background-color: var(--bg);
+  min-height: 100vh;
+  line-height: 1.6;
+  background-image:
+    radial-gradient(
+      900px 500px at 10% -10%,
+      rgba(61, 123, 255, 0.25),
+      transparent 60%
+    ),
+    radial-gradient(
+      800px 500px at 100% 0%,
+      rgba(139, 92, 246, 0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      700px 500px at 50% 110%,
+      rgba(34, 211, 238, 0.1),
+      transparent 60%
+    );
+  background-attachment: fixed;
+  background-image:
+    url("../assets/images/binary-bg.svg"),
+    radial-gradient(
+      900px 500px at 10% -10%,
+      rgba(61, 123, 255, 0.25),
+      transparent 60%
+    ),
+    radial-gradient(
+      800px 500px at 100% 0%,
+      rgba(139, 92, 246, 0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      700px 500px at 50% 110%,
+      rgba(34, 211, 238, 0.1),
+      transparent 60%
+    );
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.container {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(14px);
+  background: rgba(6, 10, 28, 0.7);
+  border-bottom: 1px solid var(--card-border);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  gap: 16px;
+}
+.logo {
+  font-family: var(--font-title);
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo span {
+  background: linear-gradient(90deg, var(--blue), var(--purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-links a {
+  display: block;
+  padding: 8px 14px;
+  border-radius: 10px;
+  color: var(--muted);
+  font-weight: 500;
+  transition: 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: #fff;
+  background: rgba(61, 123, 255, 0.15);
+}
+.nav-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--card-border);
+  color: #fff;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.25s;
+  color: #fff;
+  background: none;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  box-shadow: var(--glow-blue);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.7);
+}
+.btn-ghost {
+  border-color: var(--card-border);
+}
+.btn-ghost:hover {
+  background: rgba(61, 123, 255, 0.15);
+  border-color: var(--blue);
+}
+.btn-lg {
+  padding: 15px 34px;
+  font-size: 1.05rem;
+}
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---------- Glass card ---------- */
+.glass {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 90px 0 70px;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: center;
+}
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  background: rgba(139, 92, 246, 0.15);
+  color: #c4b5fd;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-family: var(--font-title);
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+.gradient-text {
+  background: linear-gradient(90deg, var(--cyan), var(--blue), var(--purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 520px;
+  margin-bottom: 30px;
+}
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-card {
+  padding: 34px;
+  text-align: center;
+  animation: float 5s ease-in-out infinite;
+}
+.hero-card .q {
+  color: var(--muted);
+}
+.bits {
+  font-family: var(--font-title);
+  font-size: 2.6rem;
+  letter-spacing: 8px;
+  color: var(--cyan);
+  text-shadow: 0 0 18px rgba(34, 211, 238, 0.7);
+  margin: 12px 0;
+}
+.hero-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+.hero-options div {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.04);
+  font-weight: 600;
+}
+.hero-options .correct {
+  border-color: var(--green);
+  color: var(--green);
+  box-shadow: 0 0 16px rgba(52, 211, 153, 0.35);
+}
+@keyframes float {
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 60px 0;
+}
+.section-title {
+  font-family: var(--font-title);
+  text-align: center;
+  font-size: 1.9rem;
+  margin-bottom: 10px;
+}
+.section-sub {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 36px;
+}
+.grid {
+  display: grid;
+  gap: 20px;
+}
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.feature {
+  padding: 26px;
+  transition: 0.25s;
+}
+.feature:hover {
+  transform: translateY(-6px);
+  border-color: var(--blue);
+  box-shadow: var(--glow-blue);
+}
+.feature .icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.feature h3 {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+.feature p {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.step-num {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--purple);
+  text-shadow: var(--glow-purple);
+  margin-bottom: 6px;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  border-top: 1px solid var(--card-border);
+  padding: 28px 0;
+  margin-top: 40px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}

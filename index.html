@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BINARYBOSS | Binary Number Challenge</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo">⚡ <span>BINARYBOSS</span></a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <div class="nav-menu" id="navMenu">
+          <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how">How it works</a></li>
+          </ul>
+          <div class="nav-actions">
+            <a href="login.html" class="btn btn-ghost" data-auth="guest"
+              >Login</a
+            >
+            <a href="register.html" class="btn btn-primary" data-auth="guest"
+              >Register</a
+            >
+            <a
+              href="dashboard.html"
+              class="btn btn-primary"
+              data-auth="user"
+              hidden
+              >Dashboard</a
+            >
+            <button class="btn btn-ghost" data-auth="user" data-logout hidden>
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">THE BINARY NUMBER CHALLENGE</span>
+          <h1>Defeat the <span class="gradient-text">BINARYBOSS</span></h1>
+          <p>
+            Convert, add, and decode binary numbers against the clock. Earn
+            points, build streaks, and climb the scoreboard.
+          </p>
+          <div class="hero-actions">
+            <a
+              href="register.html"
+              class="btn btn-primary btn-lg"
+              data-auth="guest"
+              >Start Playing</a
+            >
+            <a href="login.html" class="btn btn-ghost btn-lg" data-auth="guest"
+              >Login</a
+            >
+            <a
+              href="game.html"
+              class="btn btn-primary btn-lg"
+              data-auth="user"
+              hidden
+              >▶ Play Now</a
+            >
+          </div>
+        </div>
+
+        <div class="glass hero-card">
+          <div class="q">Convert to decimal</div>
+          <div class="bits">1010</div>
+          <div class="hero-options">
+            <div>8</div>
+            <div class="correct">10</div>
+            <div>12</div>
+            <div>14</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" id="features">
+      <div class="container">
+        <h2 class="section-title">Built to Test Your Binary Skills</h2>
+        <p class="section-sub">One game. Many challenges.</p>
+        <div class="grid grid-4">
+          <div class="glass feature">
+            <div class="icon">🧮</div>
+            <h3>4 Challenge Types</h3>
+            <p>
+              Binary to decimal, decimal to binary, identify values, and binary
+              addition.
+            </p>
+          </div>
+          <div class="glass feature">
+            <div class="icon">📈</div>
+            <h3>4 Difficulty Levels</h3>
+            <p>Start at Easy and work your way up to Expert.</p>
+          </div>
+          <div class="glass feature">
+            <div class="icon">🔥</div>
+            <h3>Streak Bonuses</h3>
+            <p>Answer fast and correctly to multiply your points.</p>
+          </div>
+          <div class="glass feature">
+            <div class="icon">🏆</div>
+            <h3>Leaderboard</h3>
+            <p>Compete with other players and unlock achievements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-sub">Three steps to the top.</p>
+        <div class="grid grid-3">
+          <div class="glass feature">
+            <div class="step-num">01</div>
+            <h3>Create an account</h3>
+            <p>Pick a unique username and password.</p>
+          </div>
+          <div class="glass feature">
+            <div class="step-num">02</div>
+            <h3>Play BINARYBOSS</h3>
+            <p>Answer questions before the timer runs out.</p>
+          </div>
+          <div class="glass feature">
+            <div class="step-num">03</div>
+            <h3>Climb the ranks</h3>
+            <p>Earn points and reach the Top 3.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        BINARYBOSS © 2026 · Scores are saved in your browser (LocalStorage) for
+        local testing only.
+      </div>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>
